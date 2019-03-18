@@ -1,9 +1,16 @@
 package com.jere.moveclasses;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import com.jere.statusclasses.Status;
 
+@Component
 public class ThunderWave implements Move {
 
+	@Autowired
+	@Qualifier("paralyze")
 	private Status myStatus;
 	private int damage;
 	private int accucary;
