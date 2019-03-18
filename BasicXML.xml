@@ -7,9 +7,30 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<context:property-placeholder location="classpath:moves.properties"/>
+
 	<bean id="myStatus_1" class="com.jere.statusclasses.Freeze"></bean>
+	<bean id="myStatus_2" class="com.jere.statusclasses.Confuse"></bean>
+	<bean id="myStatus_3" class="com.jere.statusclasses.Paralyze"></bean>
 
 	<bean id="myMove_1" class="com.jere.moveclasses.IceBeam">
 		<constructor-arg ref="myStatus_1" />
+		<property name="damage" value="${moves.damage}"></property>
+		<property name="accucary" value="${moves.accucary}"></property>
+		<property name="chance" value="${moves.chance}"></property>
+	</bean>
+	
+	<bean id="myMove_2" class="com.jere.moveclasses.ThunderWave">
+		<constructor-arg ref="myStatus_2" />
+		<property name="damage" value="0"></property>
+		<property name="accucary" value="95"></property>
+		<property name="chance" value="100"></property>
+	</bean>
+	
+	<bean id="myMove_3" class="com.jere.moveclasses.DarkVoid">
+		<constructor-arg ref="myStatus_3" />
+		<property name="damage" value="60"></property>
+		<property name="accucary" value="75"></property>
+		<property name="chance" value="50"></property>
 	</bean>
  </beans>

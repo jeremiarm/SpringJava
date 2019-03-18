@@ -7,16 +7,26 @@ public class IceBeam implements Move {
 	private Status myStatus;
 	private int damage;
 	private int accucary;
+	private int chance;
 	
-	@Override
-	public String toString() {
-		return "IceBeam [myStatus=" + myStatus + ", damage=" + damage + ", accucary=" + accucary + "]";
-	}
-	public IceBeam(Status myStatus, int damage, int accucary) {
+	public IceBeam(Status myStatus, int damage, int accucary, int chance) {
 		super();
 		this.myStatus = myStatus;
 		this.damage = damage;
 		this.accucary = accucary;
+		this.chance = chance;
+	}
+	public int getChance() {
+		return chance;
+	}
+	public void setChance(int chance) {
+		this.chance = chance;
+	}
+
+	@Override
+	public String toString() {
+		return "IceBeam [myStatus=" + myStatus + ", damage=" + damage + ", accucary=" + accucary + ", chance=" + chance
+				+ "]";
 	}
 	public int getDamage() {
 		return damage;

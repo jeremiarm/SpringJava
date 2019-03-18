@@ -7,11 +7,30 @@ public class DarkVoid implements Move {
 	private Status myStatus;
 	private int damage;
 	private int accucary;
+	private int chance;
 
 	
+	public DarkVoid(Status myStatus, int damage, int accucary, int chance) {
+		super();
+		this.myStatus = myStatus;
+		this.damage = damage;
+		this.accucary = accucary;
+		this.chance = chance;
+	}
+
+	public int getChance() {
+		return chance;
+	}
+
+	public void setChance(int chance) {
+		this.chance = chance;
+	}
+
+
 	@Override
 	public String toString() {
-		return "DarkVoid [myStatus=" + myStatus + ", damage=" + damage + ", accucary=" + accucary + "]";
+		return "DarkVoid [myStatus=" + myStatus + ", damage=" + damage + ", accucary=" + accucary + ", chance=" + chance
+				+ "]";
 	}
 
 	public DarkVoid() {
