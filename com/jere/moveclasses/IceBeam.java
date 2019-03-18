@@ -1,10 +1,18 @@
 package com.jere.moveclasses;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import com.jere.statusclasses.*;
 
+@Component
 public class IceBeam implements Move {
 	
+	@Autowired
+	@Qualifier("freeze")
 	private Status myStatus;
+	
 	private int damage;
 	private int accucary;
 	private int chance;

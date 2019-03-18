@@ -1,5 +1,8 @@
 package com.jere.statusclasses;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Confuse implements Status {
 
 	@Override
