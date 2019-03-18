@@ -2,6 +2,7 @@ package com.jere.moveclasses;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.jere.statusclasses.*;
@@ -13,8 +14,11 @@ public class IceBeam implements Move {
 	@Qualifier("freeze")
 	private Status myStatus;
 	
+	@Value("${moves.damage}")
 	private int damage;
+	@Value("${moves.accucary}")
 	private int accucary;
+	@Value("${moves.chance}")
 	private int chance;
 	
 	public IceBeam(Status myStatus, int damage, int accucary, int chance) {
